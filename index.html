@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>My Family</title>
+    </head>
+
+    <body style="text-align: center; background-color: darkblue; color: blueviolet; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+        <h1>My Family</h1>
+        <div>
+            <span>
+            <button onclick="previous()" style="border-radius: 10px;">
+                <</button>
+            <img id="image1" src="MyFamily.jpg" style="width: 25%; padding: 50px; border-radius: 500px;">
+            <button onclick="next()" style="border-radius: 10px;">
+                ></button>
+                </span>
+                <h3 id="role"></h3>
+                <h3 id="Name"></h3>
+        </div>
+    </body>
+
+    <script>
+        var imgs = ["dad.jpg", "mom.jpg", "me.jpg", "caelan.jpg", "ciara.jpg"]
+        var roles = ["Dad", "Mum", "Me", "Brother", "Sister"]
+        var names = ["Clint ", "Diana ", "Conan ", "Caelan ", "Ciara "]
+        var familynames = ["Caeiro", "Carvalho", "Caeiro", "Caeiro", "Caeiro"]
+        var i = -1;
+
+        function previous() {
+            
+            i--;
+            if (i < 0) {
+                i = 4;
+            }
+            
+             document.getElementById("role").innerHTML = roles[i];
+             document.getElementById("Name").innerHTML = names[i].concat(familynames[i]);
+             document.getElementById("image1").src = imgs[i];
+             console.log(roles[i])
+             console.log(names[i].concat(familynames[i]))
+            
+        }
+        
+        function next() {
+            i++; 
+                
+            if (i > 4) {
+                i = 0;
+            }
+            
+             document.getElementById("role").innerHTML = roles[i];
+             document.getElementById("Name").innerHTML = names[i].concat(familynames[i]);
+             document.getElementById("image1").src = imgs[i];
+             console.log(roles[i])
+             console.log(names[i].concat(familynames[i]))
+             
+        }
+    </script>
+</html>
